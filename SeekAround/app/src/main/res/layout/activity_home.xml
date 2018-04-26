@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="35dp"
+                android:text="App Name"
+                android:textColor="#cdcdcd"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tvAppName"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#eeeeef" />
+
+            <ImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/divider1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/avatar_placeholder" />
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_toRightOf="@+id/ivUserImage"
+                android:text="Aniket Indulkar"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvUserInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUsername"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/ivUserImage"
+                android:text="Aniket Indulkar"
+                android:textColor="#c8c8c8" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ivUserImage"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#eeeeef" />
+
+            <TextView
+                android:id="@+id/tvBrowse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Browes categories"
+                android:textColor="#c4ac4c"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvBrowse"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvNearby"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/category_drawer_back"
+                    android:drawableLeft="@drawable/ic_nearby"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Nearby"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBrowse"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tvNearby"
+                    android:layout_weight="1"
+                    android:background="@drawable/category_drawer_back"
+                    android:drawableLeft="@drawable/ic_nearby"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Dinning"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/category_drawer_back"
+                    android:drawableLeft="@drawable/ic_nearby"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Deserts"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBrowse"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tvNearby"
+                    android:layout_weight="1"
+                    android:background="@drawable/category_drawer_back"
+                    android:drawableLeft="@drawable/ic_nearby"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Drinks"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/category_drawer_back"
+                    android:drawableLeft="@drawable/ic_nearby"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Cafes"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBrowse"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tvNearby"
+                    android:layout_weight="1"
+                    android:background="@drawable/category_drawer_back"
+                    android:drawableLeft="@drawable/ic_nearby"
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="Drink"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/row3"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#eeeeef" />
+
+
+            <ImageView
+                android:id="@+id/ivPremium"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/divider3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/premium"
+                android:tint="@color/textColor" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider3"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@+id/ivPremium"
+                android:layout_weight="1"
+                android:text="Get Premium "
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ivPremium"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="7dp"
+                android:background="#eeeeef" />
+
+            <ImageView
+                android:id="@+id/ivOrders"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/divider4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/shopping_cart"
+                android:tint="@color/textColor" />
+
+
+            <TextView
+                android:id="@+id/tvOrderHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider4"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@+id/ivPremium"
+                android:text="Your orders"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvOrderinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvOrderHeader"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-3dp"
+                android:layout_toRightOf="@+id/ivUserImage"
+                android:text="Find your orders details"
+                android:textColor="#c8c8c8" />
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ivOrders"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#eeeeef" />
+
+
+            <ImageView
+                android:id="@+id/ivAccount"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/divider5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/account"
+                android:tint="@color/textColor" />
+
+
+            <TextView
+                android:id="@+id/tvAccountHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divider5"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@+id/ivPremium"
+                android:text="Account"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAccountinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvAccountHeader"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-3dp"
+                android:layout_toRightOf="@+id/ivUserImage"
+                android:text="Find your Account details"
+                android:textColor="#c8c8c8" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/ivAccount"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="#eeeeef" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.NavigationView>
+
+
+    <!--app:headerLayout="@layout/nav_header_home"-->
+    <!--app:menu="@menu/activity_home_drawer"-->
+</android.support.v4.widget.DrawerLayout>

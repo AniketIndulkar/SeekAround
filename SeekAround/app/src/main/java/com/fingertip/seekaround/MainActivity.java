@@ -1,5 +1,6 @@
 package com.fingertip.seekaround;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,8 +11,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private EditText etUsername, etEmail, etPassword, etPhoneno;
+    private Button btnLogin;
+    private TextView tvCreateAccount, tvForgotPassword, tvSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,27 +28,62 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        initializeViews();
+        setingListners();
+    }
+
+    private void setingListners() {
+        btnLogin.setOnClickListener(this);
+        tvCreateAccount.setOnClickListener(this);
+        tvForgotPassword.setOnClickListener(this);
+        tvSignIn.setOnClickListener(this);
+    }
+
+    private void initializeViews() {
+        //All edittext
+        etUsername = findViewById(R.id.etUsername);
+        etEmail = findViewById(R.id.etEmail);
+        etPassword = findViewById(R.id.etPassword);
+        etPhoneno = findViewById(R.id.etPhoneno);
+
+        //button
+        btnLogin = findViewById(R.id.btnLogin);
+
+        //TextViews
+        tvCreateAccount = findViewById(R.id.tvCreateAccount);
+        tvForgotPassword = findViewById(R.id.tvForgotPassword);
+        tvSignIn = findViewById(R.id.tvSignIn);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    public void onClick(View v) {
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (v.getId()) {
+            case R.id.btnLogin:
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                break;
+            case R.id.tvCreateAccount:
+                etEmail.setVisibility(View.VISIBLE);
+                etPhoneno.setVisibility(View.VISIBLE);
+                tvCreateAccount.setVisibility(View.GONE);
+                tvSignIn.setVisibility(View.VISIBLE);
+                tvSignIn.setText("Have account?");
+                tvForgotPassword.setVisibility(View.GONE);
+                btnLogin.setText("Sign Up");
+                break;
+            case R.id.tvForgotPassword:
+                break;
+            case R.id.tvSignIn:
+                etEmail.setVisibility(View.GONE);
+                etPhoneno.setVisibility(View.GONE);
+                tvCreateAccount.setVisibility(View.VISIBLE);
+                tvSignIn.setVisibility(View.INVISIBLE);
+                tvSignIn.setText("");
+                tvForgotPassword.setVisibility(View.VISIBLE);
+                btnLogin.setText("Sign In");
+                break;
         }
 
-        return super.onOptionsItemSelected(item);
     }
 }
