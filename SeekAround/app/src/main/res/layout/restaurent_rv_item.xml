@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/containerCardView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardElevation="4dp"
+    card_view:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/catImage"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/restaurent" />
+
+        <TextView
+            android:id="@+id/resName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/catImage"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:text="Restaurent name"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/resAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resName"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="-3dp"
+            android:text="Restaurent Address"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/resType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/resAdd"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="-3dp"
+            android:text="Restaurent Type"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
